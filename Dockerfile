@@ -4,6 +4,11 @@ MAINTAINER MARCO SEABRA
 ENV WILDFLY_HOME /opt/jboss/wildfly
 ENV DEPLOY_DIR ${WILDFLY_HOME}/standalone/deployments/
 
+# setup full standalone
+RUN mv $WILDFLY_HOME/standalone/configuration/standalone.xml $WILDFLY_HOME/standalone/configuration/standalone.xml.ORIGINAL
+
+RUN mv $WILDFLY_HOME/standalone/configuration/standalone-full.xml $WILDFLY_HOME/standalone/configuration/standalone.xml
+
 # setup timezone
 ENV TZ=America/Sao_Paulo
 USER root
