@@ -31,13 +31,13 @@ ENV DEPLOY_DIR /tmp/deploments
 RUN mkdir /tmp/jboss-cli
 ENV CLI_DIR /tmp/jboss-cli
 
-COPY startWithPostgres.sh $WILDFLY_HOME/bin
+COPY startSetup.sh $WILDFLY_HOME/bin
 
 USER root
-RUN chown jboss:jboss $WILDFLY_HOME/bin/startWithPostgres.sh
-RUN chmod 755 $WILDFLY_HOME/bin/startWithPostgres.sh
+RUN chown jboss:jboss $WILDFLY_HOME/bin/startSetup.sh
+RUN chmod 755 $WILDFLY_HOME/bin/startSetup.sh
 USER jboss
 
 COPY postgresql-42.2.12.jar /tmp
 
-ENTRYPOINT $WILDFLY_HOME/bin/startWithPostgres.sh
+ENTRYPOINT $WILDFLY_HOME/bin/startSetup.sh

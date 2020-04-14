@@ -39,6 +39,17 @@ data-source add \
 run-batch
 EOF
 
+echo "=> Setup Queue"
+$JBOSS_CLI -c << EOF
+batch
+# Add MessageQueue
+jms-queue add \
+  --queue-address=MessageQueue 
+  --entries=java:/jms/queue/MessageQueue  
+# Execute the batch
+run-batch
+EOF
+
 FILES=$CLI_DIR/*.cli
 for f in $FILES
 do

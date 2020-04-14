@@ -5,7 +5,7 @@ DB_HOST - hostname or IP address of database
 DB_PORT - port of database
 DB_NAME - name of the database
 DB_USER - username used for connection to database
-DB_PASS - password user for connection to database The connection string is then created as jdbc:postgresql://$DB_HOST:$DB_PORT/$DB_NAME more details see startWithPostgres.sh
+DB_PASS - password user for connection to database The connection string is then created as jdbc:postgresql://$DB_HOST:$DB_PORT/$DB_NAME more details see startSetup.sh
 There is possibility to copy a cli file into $CLI_DIR all the cli files will be run by jboss-cli at startup time.
 
 # Test
