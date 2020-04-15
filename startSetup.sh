@@ -42,10 +42,10 @@ EOF
 echo "=> Setup Queue"
 $JBOSS_CLI -c << EOF
 batch
-# Add MessageQueue
+# Add Application Queue
 jms-queue add \
-  --queue-address=MessageQueue \
-  --entries=java:/jms/queue/MessageQueue
+  --queue-address=$APPLICATION_QUEUE \
+  --entries=java:/jms/queue/$APPLICATION_QUEUE
 # Execute the batch
 run-batch
 EOF

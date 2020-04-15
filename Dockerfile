@@ -24,6 +24,8 @@ ENV DB_USER user
 ENV DB_PASS password
 ENV DB_NAME dbname
 
+ENV APPLICATION_QUEUE ApplicationQueue
+
 # create temporary deployment dir, because wars can deploy after the datasource is created
 RUN mkdir /tmp/deploments
 ENV DEPLOY_DIR /tmp/deploments
