@@ -24,6 +24,7 @@ module add --name=org.postgres --resources=/tmp/postgresql-42.2.12.jar --depende
 /subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
 # Add the datasource
 data-source add \
+  --jta=true --use-java-context=true --use-ccm=true \
   --jndi-name=$DATASOURCE_JNDI \
   --name=$DATASOURCE_NAME \
   --connection-url=jdbc:postgresql://$DB_HOST:$DB_PORT/$DB_NAME \
