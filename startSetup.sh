@@ -44,8 +44,8 @@ $JBOSS_CLI -c << EOF
 batch
 # Add MessageQueue
 jms-queue add \
-  --queue-address=MessageQueue 
-  --entries=java:/jms/queue/MessageQueue  
+  --queue-address=MessageQueue \
+  --entries=java:/jms/queue/MessageQueue
 # Execute the batch
 run-batch
 EOF
