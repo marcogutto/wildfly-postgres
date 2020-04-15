@@ -15,14 +15,14 @@ USER root
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 USER jboss
 
-ENV DATASOURCE_NAME ApplicationDS
-ENV DATASOURCE_JNDI java:/ApplicationDS
-
 ENV DB_HOST database
 ENV DB_PORT 5432
 ENV DB_USER user
 ENV DB_PASS password
 ENV DB_NAME dbname
+
+ENV DATASOURCE_NAME ApplicationDS
+ENV DATASOURCE_JNDI java:/ApplicationDS
 
 ENV APPLICATION_QUEUE ApplicationQueue
 
